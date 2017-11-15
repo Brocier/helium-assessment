@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Emp no:</strong>
+  <%= @employee.Emp_No %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @employee.First_Name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @employee.Last_Name %>
+</p>
+
+<p>
+  <strong>Hire date:</strong>
+  <%= @employee.Hire_Date %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @employee.Birth_Date %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+        <%if @titles.find_by(Emp_No: @employee.Emp_No) != nil%>
+        <%= @titles.find_by(Emp_No: @employee.Emp_No).Job_Title%>
+        <%else%>
+        
+        <%end%>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @employee.Gender %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
